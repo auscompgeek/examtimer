@@ -1,0 +1,9 @@
+{
+	"browser": true,
+	"esversion": 6,
+	"jquery": true,
+	"globals": {
+		"moment": false
+	},
+	"unused": true
+}
