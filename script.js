@@ -18,7 +18,7 @@ function readConfig() {
 }
 
 function tick() {
-	const now = moment();
+	const now = moment.unix(Math.round(Date.now() / 1000));
 	$("#clock").text(now.format("HH:mm:ss"));
 
 	const msToEnd = endTime.diff(now);
@@ -53,10 +53,10 @@ function tick() {
 	$("#countdown-seconds").text(String(duration.seconds()).padStart(2, "0"));
 }
 
-$(function () {
+$(() => {
 	readConfig();
 
-	$("#config-form").submit(function (event) {
+	$("#config-form").submit(event => {
 		readConfig();
 		$("#configure").modal("hide");
 		event.preventDefault();
